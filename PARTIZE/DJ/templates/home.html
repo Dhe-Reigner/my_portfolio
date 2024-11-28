@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Events</h1>
+
+
+<div class="container">
+    <div class="row">
+        {% for items in all %}
+        <div class="col-auto">
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                <div class="card-header">
+                    <strong>Name:  {{ items }} </strong><br></div>
+                <div class="card-body">
+                    Time & Date: {{ items.date }}<br>
+                    Venue: {{ items.venue }}<br>
+                    Manager: {{ items.manager }}<br>
+                    Description: {{ items.description }}<br><hr>
+                </div>
+              </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
